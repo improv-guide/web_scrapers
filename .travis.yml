@@ -1,0 +1,10 @@
+language: python
+before_install:
+  - pip install -r src/requirements_dev.txt
+  - pip install -r src/requirements.txt
+install:
+  - pip install -e src
+script:
+  - pytest ./src/test_improv_guide_web_scrapers
+git:
+  submodules: false
