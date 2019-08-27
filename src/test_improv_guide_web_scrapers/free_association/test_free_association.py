@@ -8,4 +8,4 @@ def test_0():
     results:Iterator[Event] = free_association_scraper(get_text("free_association.html"))
     for event in results:
         assert event.name
-    
+

@@ -9,5 +9,5 @@ COPY src ./src
 WORKDIR /src/
 RUN ls -l
 RUN python ./setup.py develop
-RUN python -m pytest ./test_improv_guide_web_scrapers
-RUN python -m mypy ./improv_guide_web_scrapers ./test_improv_guide_web_scrapers
+#RUN python -m pytest ./test_improv_guide_web_scrapers
+#RUN python -m mypy ./improv_guide_web_scrapers ./test_improv_guide_web_scrapers
