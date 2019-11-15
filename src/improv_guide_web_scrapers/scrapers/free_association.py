@@ -21,7 +21,7 @@ def parse_fa_datetime(date_string, time_string):
     return start_datetime, end_datetime
 
 
-def free_association_scraper(page_html: str) -> Iterator[Event]:
+def free_association_scraper(page_html: str, venue:str) -> Iterator[Event]:
     assert page_html, f"No data to scrape, got {pprint.pformat(input())}"
     soup = BeautifulSoup(page_html)
 
@@ -34,7 +34,7 @@ def free_association_scraper(page_html: str) -> Iterator[Event]:
         event_url:str = title_tag["href"]
 
         date:str = div.find("time").text
-        times:str = div.find("time", {"class":"event-time-24hr"})
+        times:str = div.find("time", {"class":"event-time-24hr"}) or "19:30 - 22:00"
 
 
         start_time, end_time = parse_fa_datetime(date, times)
@@ -44,8 +44,13 @@ def free_association_scraper(page_html: str) -> Iterator[Event]:
 
 
         e = Event(
-            name="".join(title.contents),
-            image_url=image.src
+            name="".join(event_name),
+            image_url=image.src,
+            start_time=start_time,
+            end_time=end_time,
+            blurb=blurb,
+            venue=venue,
+            url=event_url
         )
 
         yield e

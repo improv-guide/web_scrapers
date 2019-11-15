@@ -5,7 +5,7 @@ from improv_guide_web_scrapers.scrapers.free_association import free_association
 from test_improv_guide_web_scrapers.test_data import get_text
 
 def test_0():
-    results:Iterator[Event] = free_association_scraper(get_text("free_association.html"))
+    results:Iterator[Event] = free_association_scraper(get_text("free_association.html"), venue="Free Association")
     for event in results:
         assert event.name
 
