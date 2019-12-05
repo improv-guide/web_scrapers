@@ -19,10 +19,7 @@ jobs:
       run: |
           python -m pip install --upgrade pip
           pip install -r src/requirements_dev.txt
-    - name: Install dependencies
-      run: |
-        pip install -r src/requirements.txt
-    - name: Install package
+    - name: Install
       run: |
           cd src
           python setup.py develop
