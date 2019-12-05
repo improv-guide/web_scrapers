@@ -9,4 +9,10 @@
     <orderEntry type="jdk" jdkName="Remote Python 3.7.5 Docker Compose (scrapers at [/home/sal/workspace/improv_guide/web_scrapers/docker-compose.yaml])" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="pytest" />
+  </component>
 </module>
