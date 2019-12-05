@@ -23,7 +23,7 @@ jobs:
       run: |
         pip install -r src/requirements.txt
     - name: Install package
-       run: |
+      run: |
           python setup.py develop
     - name: Lint with flake8
       run: |
