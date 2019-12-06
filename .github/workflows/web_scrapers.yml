@@ -31,4 +31,4 @@ jobs:
     - name: Static check with MyPy
       run: |
         ls -l
-        mypy main test
+        mypy src
