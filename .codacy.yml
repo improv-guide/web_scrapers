@@ -4,5 +4,5 @@ engines:
     enabled: true
     python_version: 3
 exclude_paths:
-  - 'test_improv_guide_web_scrapers/test_data/**'
+  - 'src/test/test_improv_guide_web_scrapers/test_data/**'
   - '*.js'

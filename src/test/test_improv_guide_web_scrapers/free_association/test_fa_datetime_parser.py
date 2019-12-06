@@ -1,5 +1,4 @@
 from datetime import datetime
-import dateparser
 
 from improv_guide_web_scrapers.scrapers.free_association import parse_fa_datetime
 
