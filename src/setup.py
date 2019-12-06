@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 PROJECT_ROOT, _ = os.path.split(__file__)
 with open("version.txt") as vf:
@@ -25,12 +25,20 @@ try:
 except IOError:
     REQUIREMENTS = []
 
+
+packages = find_packages(where="main")
+
+print(f"*** Packages: {packages}")
+
+
+
 setup(
     name=PROJECT_NAME.lower(),
     version=REVISION,
     author=PROJECT_AUTHORS,
     author_email=PROJECT_EMAILS,
-    packages=["improv_guide_web_scrapers"],
+    package_dir={"":"main"},
+    packages=packages,
     zip_safe=True,
     include_package_data=False,
     install_requires=REQUIREMENTS,
