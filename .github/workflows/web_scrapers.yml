@@ -30,4 +30,4 @@ jobs:
         pytest
     - name: Static check with MyPy
       run: |
-        mypy .
+        mypy main test
