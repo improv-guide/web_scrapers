@@ -29,10 +29,10 @@ def scraper(page_html: str, venue: str) -> Iterator[Event]:
     assert page_html, f"No data to scrape, got {pprint.pformat(input())}"
     soup = BeautifulSoup(page_html)
 
-    show_divs: Sequence[Tag] = soup.findAll(
+    event_divs: Sequence[Tag] = soup.findAll(
         "div", {"class": "summary-item-record-type-event"}
     )
-    for div in show_divs:
+    for div in event_divs:
         image: Tag = div.find("img", {"class": "summary-thumbnail-image loaded"})
         title_tag: Tag = div.find("a", {"class": "summary-title-link"})
 

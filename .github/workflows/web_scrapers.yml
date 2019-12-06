@@ -30,5 +30,4 @@ jobs:
         pytest
     - name: Static check with MyPy
       run: |
-        ls -l
-        mypy src
+        mypy --config-file mypy.ini src
