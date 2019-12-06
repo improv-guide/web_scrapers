@@ -1,2 +1,2 @@
-beautifulsoup4==4.8.0
-dateparser
+beautifulsoup4==4.8.1
+dateparser==0.7.2
