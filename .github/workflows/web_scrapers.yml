@@ -30,4 +30,5 @@ jobs:
         pytest
     - name: Static check with MyPy
       run: |
+        ls -l
         mypy main test
