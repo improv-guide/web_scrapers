@@ -3,3 +3,4 @@ mypy==0.720
 pylint2junit
 pip==19.2.2
 flake8
+black
