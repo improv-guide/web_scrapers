@@ -21,12 +21,13 @@ jobs:
           pip install -r src/requirements_dev.txt
     - name: Install
       run: |
-          cd src
-          python setup.py develop
-    - name: Lint with flake8
+          pip install -e src
+    - name: Lint check with Black
       run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        black --check
     - name: Test with pytest
       run: |
         pytest
+    - name: Static check with MyPy
+      run: |
+        mypy --config-file mypy.ini src
