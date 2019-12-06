@@ -7,12 +7,15 @@ RUN python -m pip install -r /tmp/install/requirements_dev.txt
 RUN apt-get install git
 RUN rm -rf /tmp/install
 
-FROM uk-improv-guide-scrapers-base
+FROM uk-improv-guide-scrapers-base as uk-improv-guide-python
 COPY /src/requirements.txt /src/
 RUN python -m pip install -r /src/requirements.txt
 
-FROM uk-improv-guide-scrapers-base as uk-improv-guide-scrapers
+FROM uk-improv-guide-python as uk-improv-guide-scrapers
 COPY src ./src
 WORKDIR /src/
 RUN ls -l
+WORKDIR /src/main
+RUN ls -l
+WORKDIR /src/
 RUN python ./setup.py develop
