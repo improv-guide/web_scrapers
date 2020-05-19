@@ -1,5 +1,5 @@
 pytest==5.3.1
 mypy==0.750
 pylint2junit
-pip==19.3.1
+pip==20.1.1
 flake8==3.7.9
